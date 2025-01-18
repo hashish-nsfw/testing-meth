@@ -1,0 +1,150 @@
+#!/bin/bash
+
+echo "This is a testing methodology for Web App Pentesting"
+echo ""
+echo "1 . Pre-Engagement Phase
+2 . Information Gathering and Reconnaissance
+3 . Threat Modelling
+4 . Vulnerability Scanning
+5 . Manual Testing and Exploitation
+6 . Authentication and Authorization Testing
+7 . Session Management Testing
+8 . Information Disclosure
+9 . Business Logic Testing
+10 . Client-Side Testing
+11 . Reporting and Remediation
+12 . Post Engagement"
+echo ""
+echo "[!] Run testing-meth.sh <number> to see content (e.g., testing-meth.sh 1)
+eg, testing-meth all -> for printing all description"
+echo ""
+
+PER() {
+    echo "1 . Pre-Engagement Phase
+[+] Define scope and objective, include target web application, URL, and functions to be tested.
+[+] Obtain proper authorization and permission from the owner.
+[+] Gather relevant information about the application -> technologies used, user roles, and business-critical functionalities."
+}
+
+IGAR() {
+    echo "2 . Information Gathering and Reconnaissance
+[+] Perform passive reconnaissance to gather publicly available information.
+[+] Enumerate subdomains, directories, and hidden or sensitive contents.
+[+] Use Nmap and Google Dorks."
+}
+
+TM() {
+    echo "3 . Threat Modelling
+[+] Analyze the application architecture and data flow to identify potential threats and attack vectors.
+[+] Build an attack surface model to understand how attackers interact with the application.
+[+] Identify potential high-risk areas and prioritize testing efforts accordingly."
+}
+
+VS() {
+    echo "4 . Vulnerability Scanning
+[+] Use automated web vulnerability scanners like 'Burp Suite' or 'OWASP ZAP' to identify common security flaws.
+[+] Verify and validate the scan results manually to eliminate false positives and negatives."
+}
+
+MTAE() {
+    echo "5 . Manual Testing and Exploitation
+[+] Perform manual testing to validate and exploit identified vulnerabilities in the application.
+[+] Test for input validation issues, authentication bypass, authorization flaws, and business logic vulnerabilities.
+[+] Attempt to exploit security flaws to demonstrate their impact and potential risk to the application."
+}
+
+AAAT() {
+    echo "6 . Authentication and Authorization Testing
+[+] Test the application's authentication mechanisms to identify weaknesses in password policies, session management, and account lockout procedures.
+[+] Evaluate the application's access controls to ensure that unauthorized users cannot access sensitive functionalities or data."
+}
+
+SMT() {
+    echo "7. Session Management Testing
+[+] Evaluate the application's session management mechanisms to prevent session fixation, session hijacking, and session-related attacks.
+[+] Check for session timeout settings and proper session token handling."
+}
+
+ID() {
+    echo "8 . Information Disclosure
+[+] Review how the application handles sensitive information such as passwords, user data, and confidential files.
+[+] Test for information disclosure through error messages, server responses, or improper access controls."
+}
+
+BLT() {
+    echo "9 . Business Logic Testing
+[+] Analyze the application's business logic to identify flaws that could lead to unauthorized access or data manipulation.
+[+] Test for order-related vulnerabilities, privilege escalation, and other business logic flaws."
+}
+
+CST() {
+    echo "10 . Client-Side Testing
+[+] Evaluate the client-side code (HTML, JavaScript) for potential security vulnerabilities, such as DOM-based XSS.
+[+] Test for insecure client-side storage and sensitive data exposure."
+}
+
+RAR() {
+    echo "11 . Reporting and Remediation
+[+] Document and prioritize the identified security vulnerabilities and risks.
+[+] Provide a detailed report to developers and stakeholders, including recommendations for remediation.
+[+] Assist developers in fixing the identified security issues and retesting the application to ensure that the fixes were successful."
+}
+
+PE() {
+    echo "12 . Post Engagement
+[+] Conduct a post-engagement meeting to discuss the test results with stakeholders.
+[+] Provide security awareness training to the development team to promote secure coding practices."
+}
+
+if [ "$1" = "1" ]; then
+    PER
+elif [ "$1" = "2" ]; then
+    IGAR
+elif [ "$1" = "3" ]; then
+    TM
+elif [ "$1" = "4" ]; then
+    VS
+elif [ "$1" = "5" ]; then
+    MTAE
+elif [ "$1" = "6" ]; then
+    AAAT
+elif [ "$1" = "7" ]; then
+    SMT
+elif [ "$1" = "8" ]; then
+    ID
+elif [ "$1" = "9" ]; then
+    BLT
+elif [ "$1" = "10" ]; then
+    CST
+elif [ "$1" = "11" ]; then
+    RAR
+elif [ "$1" = "12" ]; then
+    PE
+elif [ "$1" = "all" ]; then
+    PER
+    echo ""
+    IGAR
+    echo ""
+    TM
+    echo ""
+    VS
+    echo ""
+    MTAE
+    echo ""
+    AAAT
+    echo ""
+    SMT
+    echo ""
+    ID
+    echo ""
+    BLT
+    echo ""
+    CST
+    echo ""
+    RAR
+    echo ""
+    PE
+else
+    echo "Invalid argument. Please use a number between 1 and 12 or 'all'."
+fi
+
